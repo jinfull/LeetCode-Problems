@@ -1,18 +1,35 @@
-function mergeRanges(timeRanges) {
-	let solution = [];
+function mergedRanges(arr) {
+  arr.sort(function(a,b) {
+    return a.startTime - b.startTime;
+  })
 
-	for (i = 0; i < timeRanges.length - 1; i++) {
-		if (timeRanges[i].startTime < timeRanges[i + 1].startTime) {
-			let first = timeRanges[i];
-			let second = timeRanges[i + 1];
-		} else {
-			let first = timeRanges[i + 1];
-			let second = timeRanges[i];
-		}
+  let solution = [];
 
-		if (first.endTime >= second.startTime) {
-			if (first.endTime >= second.)
-			solution.push({startTime: first.startTime, endTime: })
-		}
-	}
+  for (let i = 0; i < arr.length - 1; i++) {
+    let first = arr[i];
+    let second = arr[i + 1];
+
+    console.log(first)
+    console.log(second)
+    console.log(i)
+    console.log('---')
+
+    if (first.endTime >= second.startTime) {
+      // in this block we merge
+      if (first.endTime > second.endTime) {
+        solution.push(first);
+      } else {
+        solution.push({startTime: first.startTime, endTime: second.endTime});
+      }
+
+      i++;
+      continue;
+    } else if (first.endTime === second.startTime) {
+      solution.push(first);
+    } else {
+      solution.push(first);
+    }
+  }
+
+  return solution;
 }
