@@ -10,3 +10,28 @@ function stringCompression (str) {
   }
   return output;
 }
+
+
+
+
+
+
+function stringCompression(str) {
+  let newStr = str[0];
+  let count = 1;
+
+  for (let i = 1; i < str.length + 1; i++) {
+    console.log(i);
+    if (i === str.length) {
+      newStr += count;
+    } else if (str[i] !== newStr[newStr.length - 1]) {
+      newStr += count;
+      newStr += str[i];
+      count = 1;
+    } else {
+      count++;
+    }
+  }
+
+  return newStr;
+}
