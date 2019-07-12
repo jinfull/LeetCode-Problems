@@ -11,3 +11,20 @@ var twoSum = function(nums, target) {
     }
     
 };
+
+
+var twoSum = function(nums, target) {
+    let myHash = {};
+    
+    for (let i = 0; i < nums.length; i++) {
+        let num = nums[i]
+        myHash[num] = i;
+    }
+    
+    for (let i = 0; i < nums.length; i++) {
+        let diff = target - nums[i];
+        if (myHash[diff]) {
+            return [i, myHash[diff]];
+        }
+    }
+};

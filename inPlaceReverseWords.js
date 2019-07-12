@@ -32,10 +32,10 @@ function reverseWord(arr) {
 
 function reverseChar(arr, leftIdx, rightIdx) {
 	while (leftIdx < rightIdx) {
-    [arr[leftIdx], arr[rightIdx]] = [arr[rightIdx], arr[leftIdx]]
+	    [arr[leftIdx], arr[rightIdx]] = [arr[rightIdx], arr[leftIdx]]
 
-    leftIdx++;
-    rightIdx--;
+	    leftIdx++;
+	    rightIdx--;
   }
 
 	return arr
